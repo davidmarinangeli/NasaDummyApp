@@ -27,6 +27,10 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(this, Observer {
             textView.text = it
         })
+
+        dashboardViewModel.apod.observe(this, Observer {
+            textView.text = it.date
+        })
         return root
     }
 }

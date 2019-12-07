@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val APOD_ENDPOINT_KEY = "planetary/apod"
+private const val APOD_ENDPOINT_KEY = "planetary/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -18,17 +18,17 @@ private val moshi = Moshi.Builder()
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .addCallAdapterFactory(CoroutineCallAdapterFactory())
-    .baseUrl(BASE_URL+ APOD_ENDPOINT_KEY)
+    .baseUrl(BASE_URL)
     .build()
 
-interface MarsApiService {
-    @GET("$APOD_ENDPOINT_KEY?api_key=$API_KEY")
-    fun getProperties(): Deferred<NasaAPOD>
+interface NasaApiService {
+    @GET("${APOD_ENDPOINT_KEY}apod?api_key=$API_KEY")
+    fun getAPODAsync(): Deferred<NasaAPOD>
 }
 
-object MarsApi {
-    val retrofitService: MarsApiService by lazy{
-        retrofit.create(MarsApiService::class.java)
+object NasaApi {
+    val retrofitService: NasaApiService by lazy{
+        retrofit.create(NasaApiService::class.java)
     }
 
 }
