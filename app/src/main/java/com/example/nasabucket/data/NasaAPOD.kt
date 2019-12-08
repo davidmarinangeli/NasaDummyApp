@@ -1,4 +1,4 @@
-package com.example.nasabucket.network
+package com.example.nasabucket.data
 
 import com.squareup.moshi.Json
 

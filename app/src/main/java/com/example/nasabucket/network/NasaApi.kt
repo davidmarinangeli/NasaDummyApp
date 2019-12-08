@@ -1,5 +1,6 @@
 package com.example.nasabucket.network
 
+import com.example.nasabucket.data.NasaAPOD
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
