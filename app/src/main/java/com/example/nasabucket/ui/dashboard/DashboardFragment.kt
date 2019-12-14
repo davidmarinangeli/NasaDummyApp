@@ -43,6 +43,7 @@ class DashboardFragment : Fragment() {
             apod_date.text = it.date
             apod_explanation.text = it.explanation
 
+
             if (image != null) {
                 Glide.with(this).load(it.url).into(image)
             }

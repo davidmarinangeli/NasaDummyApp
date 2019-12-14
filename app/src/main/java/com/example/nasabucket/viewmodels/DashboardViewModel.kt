@@ -15,6 +15,11 @@ class DashboardViewModel : ViewModel() {
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
+    private val apodLiveData = MutableLiveData<NasaAPOD>()
+
+    val apod: LiveData<NasaAPOD>
+        get() = apodLiveData
+
     init {
         retrieveAPODfromNetwork()
     }
@@ -28,7 +33,7 @@ class DashboardViewModel : ViewModel() {
             val result = deferred.await()
 
             try {
-                _apod.value = result
+                apodLiveData.value = result
             } catch (e: Exception){
 
             }
@@ -39,10 +44,7 @@ class DashboardViewModel : ViewModel() {
         value = "Dashboard fragment"
     }
 
-    private val _apod = MutableLiveData<NasaAPOD>()
 
-    val apod: LiveData<NasaAPOD>
-        get() = _apod
 
     val text: LiveData<String> = _text
 }
