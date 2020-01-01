@@ -33,8 +33,8 @@ class RoverPhotosAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        holder.mIdView.text = item.id.toString()
-        holder.mContentView.text = item.rover.name
+        holder.mIdView.text = item.rover.name
+        holder.cameraName.text = item.camera.full_name
         Glide.with(holder.mImageView.context).load(item.img_src).into(holder.mImageView)
 
         holder.mListener.setOnClickListener {
@@ -47,12 +47,12 @@ class RoverPhotosAdapter(
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mIdView: TextView = mView.item_number
-        val mContentView: TextView = mView.item_content
+        val cameraName: TextView = mView.item_camera_name
         val mImageView: ImageView = mView.item_image
         val mListener: CardView = mView.cardViewItem
 
         override fun toString(): String {
-            return super.toString() + " '" + mContentView.text + "'"
+            return super.toString() + " '" + cameraName.text + "'"
         }
     }
 }

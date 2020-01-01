@@ -26,7 +26,6 @@ class DashboardViewModel : ViewModel() {
 
     private fun retrieveAPODfromNetwork() {
 
-
         coroutineScope.launch {
             val deferred = NasaApi.retrofitService.getAPODAsync()
 
