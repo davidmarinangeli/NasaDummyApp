@@ -1,4 +1,4 @@
-![nasa logo](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png | width=300)
+![nasa logo](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png | width=300px)
 
 # NasaDummyApp
 NasaDummyApp is, guess what, a dummy Android app in **Kotlin** that I developed in order to learn something new about the Droid world and keep myself updated with the lastest trends in the native universe. 
