@@ -17,6 +17,7 @@ I tried to use the most important libraries for handling the whole app's stack a
 
 ## What does it do? 
 1 - It fetches Mars Rover photos in a list and displays them on the device. 
+
 | Retrofit | Moshi | Coroutines | RecyclerView + Glide |
 |--|--| -- | -- |
 | GET request to NASA APIs | Converts JSON to Kotlin Object | Handles the async request | Display the result |
